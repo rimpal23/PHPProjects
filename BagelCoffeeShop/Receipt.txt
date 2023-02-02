@@ -1,0 +1,19 @@
+**********************SHERIDAN BAGEL SHOP*****************
+4  12 10:01 AM  2019
+Item:              Qty:                Amount
+White($1.25)           2.0              $2.5
+
+
+Coffee
+Regular coffee($1.25)              2.0               $2.5
+
+
+Toppings
+Butter          0.25                           
+Blueberry jam    0.75          $1.25
+
+
+Subtotal is:6.25
+Tax is:0.8125
+Total is:7.0625
+*******************Thank you for your order*******************

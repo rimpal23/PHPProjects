@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+
+<AnchorPane id="AnchorPane" prefHeight="478.0" prefWidth="745.0" style="-fx-background-color: lightblue;" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.FXMLDocumentController">
+   <children>
+      <HBox accessibleText="Receipt" layoutY="-1.0" prefHeight="25.0" prefWidth="745.0" style="-fx-background-color: red;">
+         <children>
+            <Label text="Sheridan Bagel Shop" />
+         </children>
+      </HBox>
+      <HBox layoutX="1.0" layoutY="418.0" prefHeight="33.0" prefWidth="699.0" style="-fx-background-color: red;">
+         <children>
+            <Button fx:id="btnCalculate" mnemonicParsing="false" onAction="#handleButtonAction" text="Calculate Total" />
+            <Button fx:id="btnReset" mnemonicParsing="false" onAction="#handleButtonAction" text="Reset Form" />
+            <Button fx:id="btnExit" mnemonicParsing="false" onAction="#handleButtonAction" text="Exit" />
+            <Button fx:id="btnFile" mnemonicParsing="false" onAction="#Print" text="Print To File" />
+            <Button fx:id="btnPrinter" mnemonicParsing="false" onAction="#handleButtonAction" text="Print To Printer" />
+         </children>
+      </HBox>
+      <TitledPane animated="false" layoutX="22.0" layoutY="39.0" prefHeight="182.0" prefWidth="303.0" text="Pick a bagel" textFill="#bc08a4">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="150.0" prefWidth="301.0">
+               <children>
+                  <RadioButton fx:id="no" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#BagelCost" text="None" textFill="#0869e9c7" />
+                  <RadioButton fx:id="radWheat" layoutX="14.0" layoutY="44.0" mnemonicParsing="false" onAction="#BagelCost" text="White($1.25)" textFill="#1570eb">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="Bagel" />
+                     </toggleGroup>
+                  </RadioButton>
+                  <RadioButton fx:id="radWhite" layoutX="14.0" layoutY="75.0" mnemonicParsing="false" onAction="#BagelCost" text="Whole wheat($1.50)" textFill="#1576eb" toggleGroup="$Bagel" />
+                  <Label layoutX="211.0" layoutY="5.0" text="Qty:" textFill="#edda08" />
+                  <TextField fx:id="tf1" layoutX="211.0" layoutY="36.0" onAction="#BagelCost" prefHeight="25.0" prefWidth="70.0" />
+                  <TextField fx:id="tf2" layoutX="211.0" layoutY="71.0" onAction="#BagelCost" prefHeight="25.0" prefWidth="70.0" />
+                  <Label fx:id="total1" layoutX="113.0" layoutY="105.0" />
+               </children>
+            </AnchorPane>
+        </content>
+      </TitledPane>
+      <TitledPane animated="false" layoutX="22.0" layoutY="227.0" prefHeight="175.0" prefWidth="303.0" text="Pick your Toppings" textFill="#e86010">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <CheckBox fx:id="chkCreamCheese" layoutX="21.0" layoutY="14.0" mnemonicParsing="false" onAction="#ToppingCost" text="Cream cheese($.50)" textFill="#0ee540" />
+                  <CheckBox fx:id="chkButter" layoutX="21.0" layoutY="40.0" mnemonicParsing="false" onAction="#ToppingCost" text="Butter($.25)" textFill="#42ef0e" />
+                  <CheckBox fx:id="chkBlueberry" layoutX="21.0" layoutY="65.0" mnemonicParsing="false" onAction="#ToppingCost" text="Blueberry jam($.75)" textFill="#2bdd0c" />
+                  <CheckBox fx:id="chkRaspberry" layoutX="20.0" layoutY="90.0" mnemonicParsing="false" onAction="#ToppingCost" text="Respberry jam($.75)" textFill="#15e20e" />
+                  <CheckBox fx:id="chkPeach" layoutX="20.0" layoutY="117.0" mnemonicParsing="false" onAction="#ToppingCost" text="Peach jelly($.75)" textFill="#47e60c" />
+                  <Label fx:id="Total2" layoutX="186.0" layoutY="109.0" />
+               </children>
+            </AnchorPane>
+        </content>
+      </TitledPane>
+      <TitledPane animated="false" layoutX="381.0" layoutY="39.0" prefHeight="182.0" prefWidth="303.0" text="Want Coffee with that?" textFill="#e90a0a">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="135.0" prefWidth="301.0">
+               <children>
+                  <RadioButton fx:id="radNoCoffee" layoutX="20.0" layoutY="22.0" mnemonicParsing="false" onAction="#CoffeeCost" text="None" textFill="#e610ed">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="Coffee" />
+                     </toggleGroup>
+                  </RadioButton>
+                  <RadioButton fx:id="radRegCoffee" layoutX="20.0" layoutY="52.0" mnemonicParsing="false" onAction="#CoffeeCost" text="Regular coffee($1.25)" textFill="#e224dc" toggleGroup="$Coffee" />
+                  <RadioButton fx:id="radCappuccino" layoutX="21.0" layoutY="83.0" mnemonicParsing="false" onAction="#CoffeeCost" text="Cappuccino($2.00)" textFill="#e415cc" toggleGroup="$Coffee" />
+                  <RadioButton fx:id="radCafeAuLait" layoutX="23.0" layoutY="113.0" mnemonicParsing="false" onAction="#CoffeeCost" text="Cafe au lait($1.75)" textFill="#e413c8" toggleGroup="$Coffee" />
+                  <Label layoutX="237.0" layoutY="17.0" text="Qty:" textFill="#d7ed0f" />
+                  <TextField fx:id="tf3" layoutX="211.0" layoutY="45.0" onAction="#CoffeeCost" prefHeight="25.0" prefWidth="70.0" />
+                  <TextField fx:id="tf4" layoutX="211.0" layoutY="79.0" onAction="#CoffeeCost" prefHeight="25.0" prefWidth="70.0" />
+                  <TextField fx:id="tf5" layoutX="211.0" layoutY="118.0" onAction="#CoffeeCost" prefHeight="25.0" prefWidth="70.0" />
+                  <Label fx:id="Total3" layoutX="67.0" layoutY="134.0" />
+               </children>
+            </AnchorPane>
+        </content>
+      </TitledPane>
+      <TitledPane animated="false" layoutX="378.0" layoutY="226.0" prefHeight="175.0" prefWidth="303.0" text="Price" textFill="#11c986">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="158.0" prefWidth="301.0">
+               <children>
+                  <Label layoutX="12.0" layoutY="21.0" text="Subtotal" textFill="#ed0404" />
+                  <Label layoutX="14.0" layoutY="67.0" text="Tax" textFill="#ed0a0a" />
+                  <Label layoutX="10.0" layoutY="114.0" text="Total" textFill="#f80707" />
+                  <TextField fx:id="lblSubtotal" layoutX="78.0" layoutY="17.0" prefHeight="25.0" prefWidth="109.0" />
+                  <TextField fx:id="lblTax" layoutX="78.0" layoutY="63.0" prefHeight="25.0" prefWidth="110.0" />
+                  <TextField fx:id="lblTotal" layoutX="80.0" layoutY="110.0" prefHeight="25.0" prefWidth="109.0" />
+               </children>
+            </AnchorPane>
+        </content>
+      </TitledPane>
+   </children>
+</AnchorPane>
