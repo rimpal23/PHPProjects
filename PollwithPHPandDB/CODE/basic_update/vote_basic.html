@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<!--
+First page of a 2 page app for voting in a poll. You will need to know the poll
+id to use it.
+
+This page needs the accompanying polls.sql import file. 
+
+-->
+<html>
+    <head>
+        <title>Vote in a Poll</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <link rel="stylesheet" href="../css/style.css">
+    </head>
+    <body>
+        <div id="container">
+            <h1>Vote in a Poll</h1>
+            <form action="vote_basic.php" method="POST">
+                Poll ID: <input type="number" required name="pollid" min="0"><br>
+                Choice: <input type="number" required name="answer" min="1" max="4"><br>
+                <input type="submit" value="Vote!">
+            </form>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<!--
+First page of a 2 page app for creating a new poll.
+-->
+<html>
+    <head>
+        <title>Create a New Poll</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <link rel="stylesheet" href="../css/style.css">
+    </head>
+    <body>
+        <div id="container">
+            <h1>Create a Poll</h1>
+            <p>Data you enter here will become publicly accessible. Please don't
+                enter anything rude.</p>
+            <form action="addpoll_basic.php" method="POST">
+                <table>
+                    <tr>
+                        <td>Title:</td>
+                        <td><input type="text" required name="title"></td>
+                    </tr>
+                    <tr>
+                        <td>Question: </td>
+                        <td><input type="text" required name="question"></td>
+                    </tr>
+                    <tr>
+                        <td>Option 1: </td>
+                        <td><input type="text" required name="answer1"></td>
+                    </tr>
+                    <tr>
+                        <td>Option 2: </td>
+                        <td><input type="text" required name="answer2"></td>
+                    </tr>
+                    <tr>
+                        <td>Option 3: </td>
+                        <td><input type="text" required name="answer3"></td>
+                    </tr>
+                    <tr>
+                        <td>Option 4: </td>
+                        <td><input type="text" required name="answer4"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><input type="submit" value="Create Poll"></td>
+                </table>
+            </form>
+        </div>
+    </body>
+</html>
