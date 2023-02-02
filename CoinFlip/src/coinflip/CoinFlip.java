@@ -1,11 +1,8 @@
-/*Rimpaldeep Kaur Dhillon
- *991528804
- */
+
 package coinflip;
 public class CoinFlip {
-    private static boolean flips[]= new boolean[100];//array to by
-    // used by all methods
-    private static int i=0;//declaring various static variables
+    private static boolean flips[]= new boolean[100];
+    private static int i=0;
     private static int heads=0;
     private static int tails=0;
     private static int roh=0;
@@ -18,7 +15,7 @@ public class CoinFlip {
      public static void flipIt(){
         for(int i=0;i<flips.length;i++){
         if(Math.random()>0.5){
-            store(true);//calling store method
+            store(true);
             }
         else{
             store(false);
